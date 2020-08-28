@@ -28,6 +28,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
        'lukelavine.com',
        '52.12.104.46',
+       'www.lukelavine.com',
 ]
 
 
