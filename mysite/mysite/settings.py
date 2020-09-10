@@ -29,6 +29,7 @@ ALLOWED_HOSTS = [
        'lukelavine.com',
        '52.12.104.46',
        'www.lukelavine.com',
+	   '127.0.0.1',
 ]
 
 
@@ -36,6 +37,7 @@ ALLOWED_HOSTS = [
 
 INSTALLED_APPS = [
 	'polls.apps.PollsConfig',
+	'home.apps.HomeConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

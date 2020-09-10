@@ -1,0 +1,66 @@
+* {
+	margin: 0px;
+}
+
+body {
+	height: calc(100% - 8px);
+}
+
+.header-grid {
+	background: #3caea3;
+	height: 20%;
+	display: grid;
+	place-items: center;
+}
+
+.header-content {
+	text-align: left;
+}
+
+.profile-picture {
+	border-radius: 50%;
+	height: 100px;
+	display: inline-block;
+}
+
+.info {
+	display: inline-block;
+	font-size: 30px;
+}
+
+.main {
+	display: flex;
+	height: 80%;
+}
+
+.half {
+	font-size: 30px;
+	color: black;
+	height: 100%;
+	text-align: center;
+	background-color: #696969;
+	border-top-style: solid;
+	border-top-color: white;
+	border-top-width:8px;
+}
+
+.fill-link {
+	flex: 50%;
+	text-decoration: none;
+}
+
+.blog {
+	border-right-style: solid;
+	border-right-color: white;
+	border-right-width:4px;
+}
+
+.portfolio {
+	border-left-style: solid;
+	border-left-color: white;
+	border-left-width:4px;
+}
+
+.icon {
+	float: left
+}
