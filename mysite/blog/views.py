@@ -2,7 +2,7 @@ from django.shortcuts import render
 from blog.models import Post
 
 def index(request):
-	posts = Post.objects.all().order_by(-published)
+	posts = Post.objects.all().order_by('-published')
 	context = {
 		"posts": posts,
 	}
