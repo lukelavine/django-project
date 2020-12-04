@@ -19,17 +19,32 @@
 <div class="main">
 	<div class="section">
 		<a href="http://www.lukelavine.com/blog" class="fill-link">
-			<img src="static/images/blog.png" class="icon">
-			<h1>DevBlog</h1>
+		<div class="section_left">
+				<h1>DevBlog</h1>
+				<img src="static/images/blog.png" class="icon">
+		</div>
+		<div class="section_right">
 			<h2>Most Recent Post</h2>
-			<h3>{{recent_post.title}}</h3>
+			<h4>{{recent_post.title}}</h4>
 			<p>{{recent_post.text|linebreaks}}</p>
+		</div>
 		</a>
 	</div>
 	<div class="section">
 		<a href="http://www.lukelavine.com/portfolio" class="fill-link">
-			<img src="static/images/portfolio.png" class="icon">
+		<div class="section_left">
 			<h1>Portfolio</h1>
+			<img src="static/images/portfolio.png" class="icon">
+		</div>
+		<div class="section_right">
+			<h2>Highlights</h2>
+			<h4>Projects</h4>
+			<p>I've built this website from scratch using mainly Python, built an augmented reality app for iOS, built a database viewer for yelp data with Postgresql and C#, a linux shell simulator written in C, and more.</p>
+			<h4>Experience</h4>
+			<p>Worked for a few different places including dairy maintenance and an IT internship.</p>
+			<h4>Eduction</h4>
+			<p>Washington State University, BS Computer Science.</p>
+		</div>
 		</a>
 	</div>
 </div>

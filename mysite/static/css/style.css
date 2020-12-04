@@ -5,8 +5,13 @@ body {
 .top{
 	background-color: 151524;
 	color: FFF;
-	padding: 15px;
+	padding: 10px;
+}	
+	
+.top img {
+	padding: 0px;
 }
+
 .top:after {
 	content: "";
 	display: table;
@@ -38,7 +43,7 @@ body {
 }
 
 .main {
-	width: 50%;
+	width: 40%;
 	margin: auto;
 }
 
@@ -48,7 +53,7 @@ body {
 }
 
 .icon {
-	float: left;
+	float: center;
 	padding: 10px;
 	padding-right: 15px;
 }
@@ -56,8 +61,24 @@ body {
 .section {
 	clear: both;
 	margin: 0px;
+	display: table;
+	width: 100%;
 }
 
 .section img {
 	height: 85px;
+}
+
+.section_left {
+	display: table-cell;
+	width: 15%;
+	text-align: right;
+	padding: 10px;
+}
+
+.section_right {
+	display: table-cell;
+	width: 85%;
+	text-align: left;
+	padding: 10px;
 }
