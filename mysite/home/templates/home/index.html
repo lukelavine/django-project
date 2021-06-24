@@ -1,60 +1,207 @@
-<!--
-<head>
-	<link rel="stylesheet" href="static/css/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
-<body>
-<div class="top">
-	<div class="column left">
-		<h1>Luke Lavine</h1>
-		<img src="static/images/email.png" class="icon">
-	</div>
-	<div class="column right">
-		<h1>Connect with me</h1>
-		<a href="https://www.linkedin.com/in/luke-lavine-9366971a6/" class="fa fa-linkedin fa-2x"></a>
-		<a href="https://twitter.com/LukeLavine2" class="fa fa-twitter fa-2x"></a>
-		<a href="https://www.instagram.com/lucas_lavine/" class="fa fa-instagram fa-2x"></a>
-		
-	</div>
-</div>
-<div class="main">
--->
 {% extends 'home/base.html' %}
 {% load static %}
 
 {% block content %}
-	<div class="section">
-		<a href="http://www.lukelavine.com/blog" class="fill-link">
-		<div class="section_left">
-				<h1>DevBlog</h1>
-				<img src="static/images/blog.png" class="icon">
-		</div>
-		<div class="section_right">
-			<h2>Most Recent Post</h2>
-			<h4>{{recent_post.title}}</h4>
-			<p>{{recent_post.text|linebreaks}}</p>
-		</div>
-		</a>
-	</div>
-	<div class="section">
-		<a href="http://www.lukelavine.com/portfolio" class="fill-link">
-		<div class="section_left">
-			<h1>Portfolio</h1>
-			<img src="static/images/portfolio.png" class="icon">
-		</div>
-		<div class="section_right">
-			<h2>Highlights</h2>
-			<h4>Projects</h4>
-			<p>I've built this website from scratch using mainly Python, built an augmented reality app for iOS, built a database viewer for yelp data with Postgresql and C#, a linux shell simulator written in C, and more.</p>
-			<h4>Experience</h4>
-			<p>Worked maintenance at a dairy factory and an IT internship.</p>
-			<h4>Eduction</h4>
-			<p>Washington State University, BS Computer Science.</p>
-		</div>
-		</a>
-	</div>
+	<!--HEADER SECTION -->
+	<div id="header-section">
+        <div class="container">
+            <div class="row centered">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1><strong>LUKE LAVINE</strong>          
+                     
+                    </h1>
+                     <br /> <br /> <br /> <br />
+                    <h2><span>&nbsp;PROGRAMMING / IT&nbsp;</span></h2>
+                     <br /> <br /> <br /> <br /> <br />
+                  <a href="#about-section">  <i class="fa fa-angle-double-down fa-5x down-icon"></i> </a>
+                </div>
+            </div>
+           
+        </div>
+       
+    </div> 
+    <!--ABOUT SECTION -->
+    <div id="about-section" >
+        <div class="container" >
+            <div class="row main-top-margin text-center">
+                <div class="col-md-8 col-md-offset-2 " data-scrollreveal="enter top and move 100px, wait 0.3s">
+                    <h1>Who Am I ?</h1>
+                    <h4>
+                      Programmer, problem solver, dedicated.
+                    </h4>
+                </div>
+            </div>
+            <div class="row main-low-margin text-center">
+                <div class="col-md-3 " data-scrollreveal="enter left and move 100px, wait 0.4s">
+                    <img class="img-circle" src="{% static 'assets/img/team/pfp.jpg' %}" alt="" width="160" height=auto>
+                    <h4><strong>Luke Lavine</strong> </h4>
+                    <p>
+                        Connect with me on social media, or send me an email at luke@lukelavine.com
+
+                    </p>
+                    <p>
+					    <a href="https://www.linkedin.com/in/luke-lavine-9366971a6/"><i class="fa fa-linkedin-square fa-2x color-black"></i></a>
+                        <a href="https://twitter.com/LukeLavine2"><i class="fa fa-twitter-square fa-2x color-black"></i></a>
+                        <a href="https://www.instagram.com/lucas_lavine/"><i class="fa fa-instagram fa-2x color-black"></i></a>
+
+                    </p>
+
+                </div>
+             
+                <div class="col-md-7 col-sm-7 col-md-offset-1  text-justify" data-scrollreveal="enter right and move 100px, wait 0.4s">
+                    <h3> Bio </h3>
+                    <p>
+                        Attended Washington State University from 2015 to 2020. Proficient with Windows, Linux, Python, C, C++, C#, SQL, among other talents.
+
+                    </p>
+                    <p>
+                         I'm a quick learner, and very driven. If you want to see what I have done or what I'm currently working on you can check my portfolio and my dev blog below.
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <!--WORK/PRODUCTS SECTION -->
+    <div id="products-section" >
+         <div class="container" >
+            <div class="row main-top-margin text-center" data-scrollreveal="enter top and move 100px, wait 0.3s">
+                <div class="col-md-8 col-md-offset-2 ">
+                    <h1>Portfolio and Dev Blog</h1>
+                    <h4>
+                       Current and Completed Projects
+                    </h4>
+                </div>
+            </div>
+             <!-- ./ Main Heading-->
+             <hr />
+            <div class="row main-low-margin" >
+                <div class="col-md-10  col-md-offset-1 ">
+ <div class="col-md-4 col-sm-4" data-scrollreveal="enter left and move 100px, wait 0.8s">
+                    <img src="{% static 'assets/img/product/portfolio.png' %}" alt="">
+                </div>
+                <div class="col-md-8 " data-scrollreveal="enter right and move 100px, wait 0.4s">
+                    <h4 >  <strong class="color-red"> Portfolio </strong></h4>
+                    <p>
+                        I've worked on a variety of projects. I've used programming languages like C, C++, C#, Python, and a bit of HTML and CSS. I've used databases like Postgresql and SQLite. I've worked with web backend technology like Apache, Nginx, Django, Flask, and AWS.
+                    </p>
+                    <p>
+                        Projects I've worked on include:
+                    </p>
+                    <p>
+                       <i class="fa fa-check"></i> This website (HTML, CSS, AWS)<br />
+                       <i class="fa fa-check"></i> PDF Transcript Reader (C#)<br />
+                       <i class="fa fa-check"></i> Python Scripts<br />
+					   <i class="fa fa-check"></i> Linux Shell Simulator (C)<br />
+                    </p>
+                    <a href="{% url 'portfolio' %" class="btn btn-success" >View All Projects</a>
+                </div>
+                </div>
+               
+            </div>
+            <!-- ./ Row Content-->
+            <hr />
+           <div class="row main-low-margin bottam-pad" >
+
+                 <div class="col-md-10  col-md-offset-1 ">
+                <div class="col-md-8 " data-scrollreveal="enter left and move 100px, wait 0.4s">
+                    <h4 >  <strong class="color-red"> Dev Blog </strong></h4>
+                    <p>
+                        If you want to read about what I've been working on lately, or a more thoughtful perspective of my projects then check this out. I talk about why I'm working on a project, what I hope to eventually accomplish with it, and what my struggles with them are.
+                    </p>
+                    <p>
+                        Most Recent Post: {{recent_post.title}}
+                    </p>
+                    <a href="{% url 'blog:index' %}" class="btn btn-danger" >Read More Here</a>
+                </div>
+                <div class="col-md-4 " data-scrollreveal="enter right and move 100px, wait 0.4s">
+                    
+                    <img class="img-margin-product" src="{% static 'assets/img/product/blog.png' %}" alt="">
+                </div>
+                     </div>
+            </div>
+        </div>
+    </div>
+	
+    <!--CONTACT SECTION -->
+    <div id="contact-section">
+        <div class="container" >
+            <div class="row main-top-margin text-center">
+                <div class="col-md-8 col-md-offset-2 " data-scrollreveal="enter top and move 100px, wait 0.3s">
+                    <h1>Contact / Hire Me</h1>
+                    <h4>
+                       Currently open to employment opportunities, mostly interested in programming
+					   or IT jobs. 
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12  col-sm-12 ">
+                    <div class="col-md-6  " data-scrollreveal="enter left and move 100px, wait 0.4s">
+                        <h3> Info and Links </h3>
+                        <hr />
+                        <p>
+                            Seattle, WA, USA<br />
+							Open to opportunities elsewhere <br />
+							Email: luke@lukelavine.com<br />
+						</p>
+						<p>	
+							<a href="https://www.linkedin.com/in/luke-lavine-9366971a6/"><i class="fa fa-linkedin-square fa-2x color-linkedin"></i></a>
+							<a href="https://twitter.com/LukeLavine2"><i class="fa fa-twitter-square fa-2x color-twitter"></i></a>
+							<a href="https://www.instagram.com/lucas_lavine/"><i class="fa fa-instagram fa-2x color-linkedin"></i></a>
+                        </p>
+                       
+                    </div>
+                    <div class="col-md-6  " data-scrollreveal="enter right and move 100px, wait 0.4s">
+                        <h3>Drop a Line </h3>
+                        <hr />
+                        <form method="post">
+							{% csrf_token %}
+                            <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input type="email" name="email" class="form-control" required="required" placeholder="Email address">
+                                    </div>
+                                </div>
+                            </div>
+                              <div class="row">
+                                <div class="col-md-6 ">
+                                    <div class="form-group">
+                                        <input type="text" name="subject" class="form-control" required="required" placeholder="Subject">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 ">
+                                    <div class="form-group">
+                                        <textarea name="message" id="message" required="required" class="form-control" rows="3"  placeholder="Message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary">Submit Request</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY LIBRARY -->
+    <script src="{% static 'assets/js/jquery.js' %}"></script>
+    <!-- CORE BOOTSTRAP LIBRARY -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+     <!-- SCROLL REVEL LIBRARY FOR SCROLLING ANIMATIONS-->
+    <script src="{% static 'assets/js/scrollReveal.js' %}"></script>
+       <!-- CUSTOM SCRIPT-->
+    <script src="{% static 'assets/js/custom.js' %}"></script>
 {% endblock %}
-<!--
-</div>
-</body>
--->
