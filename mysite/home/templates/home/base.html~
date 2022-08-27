@@ -1,0 +1,52 @@
+{% load static %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Luke Lavine</title>
+	
+    <!--GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <!--BOOTSTRAP MAIN STYLES -->
+    <link href="{% static 'assets/css/bootstrap.css' %}" rel="stylesheet" />
+    <!--FONTAWESOME MAIN STYLE -->
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+    <!--CUSTOM STYLE -->
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+</head>
+<body>   
+     <!-- NAV SECTION -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'home' %}">LUKE LAVINE</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{% url 'home' %}">HOME</a></li>
+                    <li><a href="{% url 'home' %}#about-section">ABOUT</a></li>
+                    <li><a href="{% url 'portfolio' %}">PORTFOLIO</a></li>
+                    <li><a href="{% url 'blog:index' %}">DEV-BLOG</a></li>
+                    <li><a href="{% url 'home' %}#contact-section">CONTACT</a></li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+	{% block content %}
+	{%endblock %}
+	<div id="footer">
+        <div class="container">
+            <div class="row ">
+                &copy; 2021 www.lukelavine.com | All Right Reserved 				
+            </div>
+        </div>
+    </div>  
+</body>
