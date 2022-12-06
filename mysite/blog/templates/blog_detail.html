@@ -1,7 +1,15 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-	<h1>{{post.title}}</h1>
-	<h2>{{post.published | date:"F d Y"}}</h2>
-	<p>{{post.text|linebreaks}}</p>
+	<div class="container">
+		<div class="row main-top-margin text-center">
+            <h1>Dev Log</h1>
+            <h4>My thoughts and what I've been working on</h4>
+        </div>
+		<div class="text-justify">
+			<h3> <strong>Dev Log #{{post.id}}: {{post.title}} </strong></h3>
+			<p> <strong> {{post.published | date:"F d Y"}} </strong></p>
+			<p> {{post.text|linebreaks}} </p>
+		</div>
+	</div>
 {% endblock %}

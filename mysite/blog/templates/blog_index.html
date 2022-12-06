@@ -1,16 +1,32 @@
 {% extends 'home/base.html' %}
-
+{% load static %}
 
 {% block content %}
 	<div class="container">
 		<div class="row main-top-margin text-center">
-            <h1>Dev Blog</h1>
+            <h1>Dev Log</h1>
             <h4>My thoughts and what I've been working on</h4>
         </div>
+		
+		<div class="container row" style="font-size: 16px">
+			<form method="post" name="sort_form">
+			{% csrf_token %}
+			<label for="sort">Sort:</label>
 
+			<select name="sort" id="sort" onchange="form.submit()">
+				<option value="date_d">Most Recent</option>
+				<option value="date_a" {% if selected == "date_a" %}selected{% endif %}>Oldest</option>
+				<option value="alpha_d" {% if selected == "alpha_d" %}selected{% endif %}>A-Z</option>
+				<option value="alpha_a" {% if selected == "alpha_a" %}selected{% endif %}>Z-A</option>
+			</select>
+			
+			<input type="submit" hidden />
+			<input type="text" name="search" placeholder="Search.." style="float:right">
+			</form>
+		</div>
 		{% for post in posts %}
 				<div class="text-justify">
-					<h3> <strong> {{post.title}} </strong></h3>
+					<h3> <strong>Dev Log #{{post.id}}: {{post.title}} </strong></h3>
 					<p> <strong> {{post.published | date:"F d Y"}} </strong></p>
 					<p> {{post.text|linebreaks}} </p>
 				</div>
