@@ -7,7 +7,18 @@
 		</div>
 	
 		<div class="text-justify">
-		
+			{% for entry in entries %}
+				<h2>{{entry.title}}</h2>
+				<h4>{{entry.date | date:"F Y"}}</h4>
+				<p>{{entry.text|safe}}</p>
+				<br>
+			{% endfor %}
+			
+		</div>
+	</div>
+{% endblock %}
+
+<!--
 			<h2>This Website</h2>
 			<p>I taught myself the basics of full stack development and managed to get this website up and running. You can read up on it a bit more at my <a href="www.lukelavine.com/blog">devblog</a>. I wanted to focus on learning how to use AWS and Django, so those are the main technologies I used.</p>
 			<br>
@@ -35,6 +46,4 @@
 			<h2>Boolean Decision Diagram Closure</h2>
 			<p>For our algorithms class we had to write a Python script along with a package called pyeda to perform transitive closures on a boolean decision diagram in order to determine if a node could reach another node in an even number of steps. You can checkout my code on my <a href="https://github.com/lukelavine/BDD-Closure-Script">github</a>.</p>
 			<br>
-		</div>
-	</div>
-{% endblock %}
+-->
