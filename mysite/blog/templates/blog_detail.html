@@ -1,4 +1,9 @@
 {% extends 'home/base.html' %}
+{% load static %}
+
+{% block head %}
+	<link href="{% static 'blog/blog.css' %}" rel="stylesheet" />
+{% endblock %}
 
 {% block content %}
 	<div class="container">
@@ -6,10 +11,26 @@
             <h1>Dev Log</h1>
             <h4>My thoughts and what I've been working on</h4>
         </div>
-		<div class="text-justify">
-			<h3> <strong>Dev Log #{{post.id}}: {{post.title}} </strong></h3>
-			<p> <strong> {{post.published | date:"F d Y"}} </strong></p>
-			<p> {{post.text|linebreaks}} </p>
+		<div class="layout">
+			{% if prev == 0 %}
+			<div class="right-column"></div>
+			{% else %}
+			<a href="{% url 'blog:detail' prev %}" class="left-column">
+				<div class="arrow" style="transform: translate(-50%, -50%) rotate(135deg);"></div>
+			</a>
+			{% endif %}
+			<div class="middle-column text-justify">
+				<h3> <strong>Dev Log #{{post.id}}: {{post.title}} </strong></h3>
+				<p> <strong> {{post.published | date:"F d Y"}} </strong></p>
+				<p> {{post.text|safe}} </p>
+			</div>
+			{% if next == 0 %}
+			<div class="right-column"></div>
+			{% else %}
+			<a href="{% url 'blog:detail' next %}" class="right-column">
+				<div class="arrow" style="transform: translate(-50%, -50%) rotate(-45deg);"></div>
+			</a>
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

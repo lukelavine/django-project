@@ -1,0 +1,30 @@
+.layout {
+	display: flex;
+}
+
+.left-column, .right-column {
+	width: 10%;
+	position: relative;
+}
+
+a:hover {
+	background-color:#d3d3d3;
+}
+
+
+
+.arrow {
+	width: 25px;
+	height: 25px;
+	border: solid #333;
+	border-width: 0 2px 2px 0;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.middle-column {
+	width: 90%;
+	padding: 20px;
+}

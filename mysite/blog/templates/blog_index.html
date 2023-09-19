@@ -12,7 +12,7 @@
 				<div class="text-justify">
 					<h3> <strong>Dev Log #{{post.id}}: {{post.title}} </strong></h3>
 					<p> <strong> {{post.published | date:"F d Y"}} </strong></p>
-					<p> {{post.text|linebreaks}} </p>
+					<p> {{post.text|safe}} </p>
 				</div>
 		{% endfor %}
 	</div>

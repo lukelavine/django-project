@@ -16,6 +16,9 @@
     <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
     <!--CUSTOM STYLE -->
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+	
+	{% block head %}
+	{% endblock %}
 </head>
 <body>   
      <!-- NAV SECTION -->
@@ -41,8 +44,8 @@
         </div>
     </div>
 	{% block content %}
-	{%endblock %}
-	<div id="footer">
+	{% endblock %}
+	<div id="footer" class="navbar-fixed-bottom">
         <div class="container">
             <div class="row ">
                 &copy; 2023 www.lukelavine.com | All Right Reserved 				
