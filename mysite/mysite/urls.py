@@ -17,12 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 from home import views as h_views
-from portfolio import views as p_views
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 	path('', h_views.home, name='home'),
 	path('blog/', include('blog.urls'), name='blog'),
-	path('portfolio', p_views.portfolio, name="portfolio"),
+	path('portfolio/', include('portfolio.urls'), name='portfolio'),
 ]

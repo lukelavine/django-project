@@ -1,49 +1,26 @@
 {% extends 'home/base.html' %}
+{% load static %}
+
+{% block head %}
+	<link href="{% static 'portfolio/portfolio.css' %}" rel="stylesheet" />
+{% endblock %}
 
 {% block content %}
 	<div class="container">
 		<div class="row main-top-margin text-center">
-			<h1>Projects</h1>
+			<h1>Portfolio</h1>
+			<h4>Past and current projects</hr>
 		</div>
 	
-		<div class="text-justify">
+		<div class="card-container">
 			{% for entry in entries %}
+			<a href="{% url 'portfolio:detail' entry.id %}" class="card">
+				<img src="{% static 'portfolio/'|add:entry.icon %}" width="50%" height="50%" style="display:block;margin:auto">
 				<h2>{{entry.title}}</h2>
-				<h4>{{entry.date | date:"F Y"}}</h4>
-				<p>{{entry.text|safe}}</p>
+				<p>{{entry.text|striptags|truncatewords:35}}</p>
 				<br>
+			</a>
 			{% endfor %}
-			
 		</div>
 	</div>
 {% endblock %}
-
-<!--
-			<h2>This Website</h2>
-			<p>I taught myself the basics of full stack development and managed to get this website up and running. You can read up on it a bit more at my <a href="www.lukelavine.com/blog">devblog</a>. I wanted to focus on learning how to use AWS and Django, so those are the main technologies I used.</p>
-			<br>
-			
-			<h2>Spotify Together</h2>
-			<p>In 2022 I took a course on machine learning and we were given an open ended project as our final. I decided I wanted to try to replicate and possibly improve on the combined playlists that spotify can generate for two users using various machine learning techniques. There were mixed results, so I hope to return to it and dial it in sometime. The code is posted on my <a href="https://github.com/lukelavine/Yelp-Database-Application">github</a>.</p>
-			<br>
-			
-			<h2>Augmented Reality Product Viewer</h2>
-			<p>For my senior design class I worked in a small team to make an augmented reality app for iOS that allowed potential customers to view products from the company that sponsored our senior project. Unfortunately I am not allowed to post the code online, but my contribution was helping with the app itself in the first semester and setting up the backend of the website interface during the second semester, which is where they uploaded the 3D models and all of the information about them. What this entailed was setting up a Flask server, a Nginx server, a Postgresql server, and an Apollo server, ensuring they could all communicate with one another.</p>
-			<br>
-			
-			<h2>Yelp Database Viewer</h2>
-			<p>For a class we worked in a small group to parse and insert datapoints from Yelp into a database using Postgresql and create an interface for viewing or modifying the data using C# and Windows Forms. You can checkout my code on my <a href="https://github.com/lukelavine/Yelp-Database-Application">github</a>.</p>
-			<br>
-			
-			<h2>Linux Shell Simulator</h2>
-			<p>For a class we had to write a program in C that had the basic functionality of a Linux Shell, which included commands like ls, cd, pwd, rm, mount, etc. You can checkout my code on my <a href="https://github.com/lukelavine/Linux-Shell-Simulator">github</a>.</p>
-			<br>
-			
-			<h2>Transcript Reader</h2>
-			<p>Created a program for a relative who works at a high school to read a students transcript and determine which classes they still need to take. Still currently being worked on, but you can see my progress on my <a href="https://github.com/lukelavine/Linux-Shell-Simulator">github</a>.</p>
-			<br>
-			
-			<h2>Boolean Decision Diagram Closure</h2>
-			<p>For our algorithms class we had to write a Python script along with a package called pyeda to perform transitive closures on a boolean decision diagram in order to determine if a node could reach another node in an even number of steps. You can checkout my code on my <a href="https://github.com/lukelavine/BDD-Closure-Script">github</a>.</p>
-			<br>
--->

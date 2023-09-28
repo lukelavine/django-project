@@ -8,3 +8,10 @@ def portfolio(request):
 		"entries": entries
 	}
 	return render(request, 'portfolio.html', context)
+
+def detail(request, pk):
+	entry = PortfolioEntry.objects.get(pk=pk)
+	context = {
+		"entry": entry
+	}
+	return render(request, "portfolio_detail.html", context)

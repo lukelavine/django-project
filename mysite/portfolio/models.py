@@ -10,3 +10,4 @@ class PortfolioEntry(models.Model):
 	title = models.CharField(max_length = 100)
 	text = models.TextField(blank=True)
 	date = models.DateTimeField('date published')
+	icon = models.CharField(max_length = 32)
