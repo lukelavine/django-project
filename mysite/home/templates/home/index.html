@@ -1,6 +1,10 @@
 {% extends 'home/base.html' %}
 {% load static %}
 
+{% block head %}
+	<link href="{% static 'portfolio/portfolio.css' %}" rel="stylesheet" />
+{% endblock %}
+
 {% block content %}
 	<!--HEADER SECTION -->
 	<div id="header-section">
@@ -48,18 +52,15 @@
                 <div class="col-md-7 col-sm-7 col-md-offset-1  text-justify" data-scrollreveal="enter right and move 100px, wait 0.4s">
                     <h3> Education </h3>
                     <p>
-                        Graduated from Washington State University in May 2022 as part of the Honors College.
-						
+                        I graduated with a Bachelor of Science in Computer Science from Washington State University in May 2022 as part of the Honors College.
                     </p>
-					<h3> Skills </h3>
+					<h3> Technical Skills </h3>
 					<p>
-						Proficient with Python, C, C++, C#, SQL, Git, among other talents.
-						
+						Python, C, C++, C#, Git, SQL, SQLite, PostgreSQL, Powershell, AWS EC2, Unreal Engine.
 					</p>
-					<h3> Personality </h3>
+					<h3> Professional Skills </h3>
                     <p>
-                         I'm a quick learner, and very passionate. If you want to see what I have done or what I'm currently working on you can check my portfolio and my dev log below.
-
+                        Communication, Problem Solving, Adaptability, Time Management, Patience, Collaboration.
                     </p>
                 </div>
             </div>
@@ -71,58 +72,51 @@
          <div class="container" >
             <div class="row main-top-margin text-center" data-scrollreveal="enter top and move 100px, wait 0.3s">
                 <div class="col-md-8 col-md-offset-2 ">
-                    <h1>Portfolio and Dev Log</h1>
-                    <h4>
-                       Current and Completed Projects
-                    </h4>
+                    <h1>Portfolio Projects</h1>
                 </div>
             </div>
              <!-- ./ Main Heading-->
              <hr />
             <div class="row main-low-margin" >
-                <div class="col-md-10  col-md-offset-1 ">
- <div class="col-md-4 col-sm-4" data-scrollreveal="enter left and move 100px, wait 0.8s">
-                    <img src="{% static 'assets/img/product/portfolio.png' %}" alt="">
-                </div>
-                <div class="col-md-8 " data-scrollreveal="enter right and move 100px, wait 0.4s">
-                    <h4 >  <strong class="color-red"> Portfolio </strong></h4>
-                    <p>
-                        I've worked on a variety of projects using programming languages like C, C++, C#, Python, and more.
-                    </p>
-                    <p>
-                        Projects I've worked on include:
-                    </p>
-                    <p>
-                       <i class="fa fa-check"></i> This website (HTML, CSS, AWS)<br />
-                       <i class="fa fa-check"></i> PDF Transcript Reader (C#)<br />
-                       <i class="fa fa-check"></i> Spotify Together (Python)<br />
-					   <i class="fa fa-check"></i> Linux Shell Simulator (C)<br />
-                    </p>
-		    <a href="{% url 'portfolio:portfolio' %}" class="btn btn-success" >View All Projects</a>
-                </div>
-                </div>
+                <div class="card-container">
+					<a href="{% url 'portfolio:detail' project1.id %}" class="card">
+						<img src="{% static 'portfolio/'|add:project1.icon %}" width="50%" height="50%" style="display:block;margin:auto">
+						<h2>{{project1.title}}</h2>
+						<p>{{project1.text|striptags|truncatewords:30}}</p>
+					</a>
+					<a href="{% url 'portfolio:detail' project2.id %}" class="card">
+						<img src="{% static 'portfolio/'|add:project2.icon%}" width="50%" height="50%" style="display:block;margin:auto">
+						<h2>{{project2.title}}</h2>
+						<p>{{project2.text|striptags|truncatewords:30}}</p>
+					</a>
+					<a href="{% url 'portfolio:portfolio' %}" class="card">
+						<img src="{% static 'images/portfolio.png' %}" width="50%" height="50%" style="display:block;margin:auto">
+						<h2>Other Projects</h2>
+						<p>Including this website, my various Arduino projects, and my senior design project...</p>
+					</a>
+				</div>
                
             </div>
             <!-- ./ Row Content-->
             <hr />
-           <div class="row main-low-margin bottam-pad" >
+            <div class="row main-low-margin bottam-pad" >
 
-                 <div class="col-md-10  col-md-offset-1 ">
+            <div class="col-md-10  col-md-offset-1 ">
                 <div class="col-md-8 " data-scrollreveal="enter left and move 100px, wait 0.4s">
-                    <h4 >  <strong class="color-red"> Dev Blog </strong></h4>
-                    <p>
-                        If you want to read about what I've been working on lately, or a more thoughtful perspective of my projects then check this out. I talk about why I'm working on a project, what I hope to eventually accomplish with it, and what my struggles with them are.
-                    </p>
-                    <p>
+                    <h3 >  <strong class="color-red"> Dev Log </strong></h3>
+                    <h4>
                         Most Recent Post: {{recent_post.title}}
-                    </p>
+                    </h4>
+					<p> 
+						{{recent_post.text|truncatewords:50}}
+					</p>
                     <a href="{% url 'blog:index' %}" class="btn btn-danger" >Read More Here</a>
                 </div>
                 <div class="col-md-4 " data-scrollreveal="enter right and move 100px, wait 0.4s">
                     
-                    <img class="img-margin-product" src="{% static 'assets/img/product/blog.png' %}" alt="">
+                    <img class="img-margin-product" src="{% static 'images/blog.png' %}" alt="">
                 </div>
-                     </div>
+            </div>
             </div>
         </div>
     </div>
