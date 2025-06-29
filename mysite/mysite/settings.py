@@ -31,6 +31,7 @@ ALLOWED_HOSTS = [
        '52.12.104.46',
        'www.lukelavine.com',
 	   '127.0.0.1',
+       'localhost'
 ]
 
 
@@ -76,7 +77,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'mysite.wsgi.application'
+ASGI_APPLICATION = 'mysite.asgi.application'
 
 
 # Database
